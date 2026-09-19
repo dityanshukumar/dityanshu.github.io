@@ -7,387 +7,122 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-
 body{
   font-family:Arial,sans-serif;
   background:#081017;
   color:#fff;
 }
-
 button,input{font:inherit}
 button{cursor:pointer;border:0}
-
 header{
-  height:65px;
-  padding:0 18px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  background:#111d24;
-  border-bottom:1px solid #26343c;
+  height:65px;padding:0 18px;display:flex;align-items:center;
+  justify-content:space-between;background:#111d24;border-bottom:1px solid #26343c;
 }
-
-.logo{
-  font-size:21px;
-  font-weight:700;
-}
-
+.logo{font-size:21px;font-weight:700}
 .logo span{color:#25d366}
-
-.menu{
-  font-size:27px;
-  color:#b8c4ca;
-}
-
+.menu{font-size:27px;color:#b8c4ca}
 .hero{
-  text-align:center;
-  padding:55px 20px;
+  text-align:center;padding:55px 20px;
   background:linear-gradient(145deg,#101e26,#0a141a);
 }
-
 .avatar{
-  width:105px;
-  height:105px;
-  margin:auto;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#25d366;
-  color:#06230f;
-  font-size:36px;
-  font-weight:bold;
-  box-shadow:0 0 30px #25d36633;
+  width:105px;height:105px;margin:auto;border-radius:50%;display:flex;
+  align-items:center;justify-content:center;background:#25d366;color:#06230f;
+  font-size:36px;font-weight:bold;box-shadow:0 0 30px #25d36633;
 }
-
-.hero h1{
-  margin-top:20px;
-  font-size:30px;
-}
-
-.hero p{
-  margin-top:8px;
-  color:#9eabb2;
-}
-
-.actions{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  margin-top:25px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  padding:13px 22px;
-  border-radius:25px;
-  font-weight:bold;
-}
-
-.chatBtn{
-  background:#25d366;
-  color:#06230f;
-}
-
-.aboutBtn{
-  background:#26343c;
-  color:white;
-}
-
-section{
-  padding:30px 20px;
-  max-width:1000px;
-  margin:auto;
-}
-
+.hero h1{margin-top:20px;font-size:30px}
+.hero p{margin-top:8px;color:#9eabb2}
+.actions{display:flex;justify-content:center;gap:12px;margin-top:25px;flex-wrap:wrap}
+.btn{padding:13px 22px;border-radius:25px;font-weight:bold}
+.chatBtn{background:#25d366;color:#06230f}
+.aboutBtn{background:#26343c;color:white}
+section{padding:30px 20px;max-width:1000px;margin:auto}
 section h2{margin-bottom:18px}
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-}
-
-.card{
-  padding:22px;
-  background:#111d24;
-  border:1px solid #26343c;
-  border-radius:15px;
-}
-
-.card h3{
-  color:#25d366;
-  margin-bottom:10px;
-}
-
-.card p{
-  color:#aebac1;
-  line-height:1.5;
-}
-
-footer{
-  padding:30px;
-  text-align:center;
-  color:#71808a;
-}
-
-
-/* AUTH */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card{padding:22px;background:#111d24;border:1px solid #26343c;border-radius:15px}
+.card h3{color:#25d366;margin-bottom:10px}
+.card p{color:#aebac1;line-height:1.5}
+footer{padding:30px;text-align:center;color:#71808a}
 
 #authScreen{
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:200;
-  background:#081017;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
+  display:none;position:fixed;inset:0;z-index:200;background:#081017;
+  align-items:center;justify-content:center;padding:20px;
 }
-
 .authBox{
-  width:100%;
-  max-width:410px;
-  padding:28px 22px;
-  background:#111d24;
-  border:1px solid #26343c;
-  border-radius:18px;
+  width:100%;max-width:410px;padding:28px 22px;background:#111d24;
+  border:1px solid #26343c;border-radius:18px;
 }
-
-.authBox h2{
-  text-align:center;
-  margin-bottom:8px;
-}
-
-.authBox .sub{
-  text-align:center;
-  color:#85939a;
-  margin-bottom:22px;
-}
-
+.authBox h2{text-align:center;margin-bottom:8px}
+.authBox .sub{text-align:center;color:#85939a;margin-bottom:22px}
 .authBox input{
-  width:100%;
-  padding:14px;
-  margin-bottom:12px;
-  border:0;
-  outline:0;
-  border-radius:9px;
-  background:#25343c;
-  color:white;
+  width:100%;padding:14px;margin-bottom:12px;border:0;outline:0;
+  border-radius:9px;background:#25343c;color:white;
 }
-
 .authButton{
-  width:100%;
-  padding:14px;
-  border-radius:9px;
-  background:#25d366;
-  color:#06230f;
-  font-weight:bold;
+  width:100%;padding:14px;border-radius:9px;background:#25d366;
+  color:#06230f;font-weight:bold;
 }
-
-.switch{
-  text-align:center;
-  margin-top:18px;
-  color:#25d366;
-  cursor:pointer;
-}
-
-.closeAuth{
-  text-align:center;
-  margin-top:15px;
-  color:#8c9aa1;
-  cursor:pointer;
-}
-
+.switch{text-align:center;margin-top:18px;color:#25d366;cursor:pointer}
+.closeAuth{text-align:center;margin-top:15px;color:#8c9aa1;cursor:pointer}
 .error{
-  display:none;
-  background:#3b2025;
-  color:#ff9da8;
-  padding:10px;
-  border-radius:8px;
-  margin-bottom:12px;
-  font-size:13px;
+  display:none;background:#3b2025;color:#ff9da8;padding:10px;
+  border-radius:8px;margin-bottom:12px;font-size:13px;
 }
-
-
-/* CHAT */
 
 #chat{
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:100;
-  background:#081017;
+  display:none;position:fixed;inset:0;z-index:100;background:#081017;
 }
-
 .chatBox{
-  height:100%;
-  max-width:750px;
-  margin:auto;
-  display:flex;
-  flex-direction:column;
+  height:100%;max-width:750px;margin:auto;display:flex;flex-direction:column;
   background:#0b171e;
 }
-
 .chatTop{
-  height:65px;
-  padding:8px 14px;
-  display:flex;
-  align-items:center;
-  gap:12px;
+  height:65px;padding:8px 14px;display:flex;align-items:center;gap:12px;
   background:#111d24;
 }
-
-.back{
-  font-size:31px;
-  cursor:pointer;
-}
-
+.back{font-size:31px;cursor:pointer}
 .chatLogo{
-  width:42px;
-  height:42px;
-  border-radius:50%;
-  background:#25d366;
-  color:#06230f;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:bold;
+  width:42px;height:42px;border-radius:50%;background:#25d366;color:#06230f;
+  display:flex;align-items:center;justify-content:center;font-weight:bold;
 }
-
-.chatName{
-  flex:1;
-}
-
-.chatName small{
-  display:block;
-  color:#7f9099;
-  margin-top:3px;
-}
-
-.logout{
-  color:#ff8c8c;
-  font-size:13px;
-  cursor:pointer;
-}
-
-.search{
-  padding:10px;
-  background:#111d24;
-}
-
+.chatName{flex:1}
+.chatName small{display:block;color:#7f9099;margin-top:3px}
+.logout{color:#ff8c8c;font-size:13px;cursor:pointer}
+.search{padding:10px;background:#111d24}
 .search input{
-  width:100%;
-  border:0;
-  outline:0;
-  padding:12px 15px;
-  border-radius:22px;
-  background:#25343c;
-  color:white;
+  width:100%;border:0;outline:0;padding:12px 15px;border-radius:22px;
+  background:#25343c;color:white;
 }
-
 .searchResult{
-  background:#18262d;
-  padding:12px;
-  margin-top:6px;
-  border-radius:10px;
-  display:none;
-  cursor:pointer;
+  background:#18262d;padding:12px;margin-top:6px;border-radius:10px;
+  display:none;cursor:pointer;
 }
-
-.searchResult b{
-  display:block;
-}
-
-.searchResult small{
-  color:#8d9aa0;
-}
-
-.chatBody{
-  flex:1;
-  overflow:auto;
-  padding:18px;
-  background:#091319;
-}
-
-.info{
-  text-align:center;
-  color:#7e8d95;
-  margin-top:25%;
-  line-height:1.7;
-}
-
+.searchResult b{display:block}
+.searchResult small{color:#8d9aa0}
+.chatBody{flex:1;overflow:auto;padding:18px;background:#091319}
+.info{text-align:center;color:#7e8d95;margin-top:25%;line-height:1.7}
 .message{
-  max-width:75%;
-  padding:9px 12px;
-  margin:7px 0;
-  border-radius:9px;
+  max-width:75%;padding:9px 12px;margin:7px 0;border-radius:9px;
   word-break:break-word;
 }
-
-.me{
-  margin-left:auto;
-  background:#005c4b;
-}
-
-.other{
-  background:#1b2930;
-}
-
+.me{margin-left:auto;background:#005c4b}
+.other{background:#1b2930}
 .time{
-  display:block;
-  text-align:right;
-  font-size:10px;
-  color:#9db0b8;
-  margin-top:4px;
+  display:block;text-align:right;font-size:10px;color:#9db0b8;margin-top:4px;
 }
-
-.chatBottom{
-  display:flex;
-  gap:8px;
-  padding:9px;
-  background:#111d24;
-}
-
+.chatBottom{display:flex;gap:8px;padding:9px;background:#111d24}
 .chatBottom input{
-  flex:1;
-  border:0;
-  outline:0;
-  border-radius:25px;
-  padding:13px 16px;
-  background:#25343c;
-  color:white;
+  flex:1;border:0;outline:0;border-radius:25px;padding:13px 16px;
+  background:#25343c;color:white;
 }
-
 .send{
-  width:48px;
-  height:48px;
-  border-radius:50%;
-  background:#25d366;
-  font-size:19px;
+  width:48px;height:48px;border-radius:50%;background:#25d366;font-size:19px;
 }
-
-#selectedUser{
-  display:none;
-}
-
-
-/* LOADING */
-
 #loading{
-  display:none;
-  position:fixed;
-  inset:0;
-  z-index:500;
-  background:#081017dd;
-  align-items:center;
-  justify-content:center;
-  font-size:18px;
+  display:none;position:fixed;inset:0;z-index:500;background:#081017dd;
+  align-items:center;justify-content:center;font-size:18px;
 }
-
-@media(max-width:700px){
-  .cards{grid-template-columns:1fr}
-}
+@media(max-width:700px){.cards{grid-template-columns:1fr}}
 </style>
 </head>
 
@@ -398,197 +133,113 @@ footer{
   <div class="menu">⋮</div>
 </header>
 
-
 <div class="hero">
-
   <div class="avatar">DK</div>
-
   <h1>Dityanshu Kumar</h1>
-
   <p>Personal Website • Real-Time Chat</p>
-
   <div class="actions">
-
-    <button class="btn chatBtn" onclick="openChat()">
-      💬 Open Chat
-    </button>
-
+    <button class="btn chatBtn" onclick="openChat()">💬 Open Chat</button>
     <button class="btn aboutBtn"
-      onclick="document.getElementById('about').scrollIntoView()">
-      About Me
-    </button>
-
+      onclick="document.getElementById('about').scrollIntoView()">About Me</button>
   </div>
-
 </div>
-
 
 <section id="about">
-
-<h2>About Me</h2>
-
-<div class="cards">
-
-<div class="card">
-<h3>🎓 Education</h3>
-<p>Bachelor of Commerce</p>
-</div>
-
-<div class="card">
-<h3>💡 Skills</h3>
-<p>Communication, learning and technology.</p>
-</div>
-
-<div class="card">
-<h3>🚀 Projects</h3>
-<p>Personal projects and applications.</p>
-</div>
-
-</div>
-
+  <h2>About Me</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>🎓 Education</h3>
+      <p>Bachelor of Commerce</p>
+    </div>
+    <div class="card">
+      <h3>💡 Skills</h3>
+      <p>Communication, learning and technology.</p>
+    </div>
+    <div class="card">
+      <h3>🚀 Projects</h3>
+      <p>Personal projects and applications.</p>
+    </div>
+  </div>
 </section>
 
-
-<footer>
-© 2026 Dityanshu Kumar
-</footer>
-
-
-<!-- AUTH SCREEN -->
+<footer>© 2026 Dityanshu Kumar</footer>
 
 <div id="authScreen">
+  <div class="authBox">
+    <h2 id="authTitle">Login</h2>
+    <p class="sub">Dityanshu Chat</p>
 
-<div class="authBox">
+    <div id="authError" class="error"></div>
 
-<h2 id="authTitle">Login</h2>
+    <div id="usernameBox" style="display:none">
+      <input id="username" type="text" placeholder="Username"
+             autocomplete="username">
+    </div>
 
-<p class="sub">Dityanshu Chat</p>
+    <input id="authEmail" type="email" placeholder="Email"
+           autocomplete="email">
 
-<div id="authError" class="error"></div>
+    <input id="authPassword" type="password" placeholder="Password"
+           autocomplete="current-password">
 
-<div id="usernameBox">
-<input
-id="username"
-type="text"
-placeholder="Username"
-autocomplete="username">
+    <button class="authButton" onclick="submitAuth()">
+      <span id="authButtonText">Login</span>
+    </button>
+
+    <div class="switch" onclick="toggleAuth()">
+      <span id="switchText">Create new account</span>
+    </div>
+
+    <div class="closeAuth" onclick="closeAuth()">Cancel</div>
+  </div>
 </div>
-
-<input
-id="authEmail"
-type="email"
-placeholder="Email"
-autocomplete="email">
-
-<input
-id="authPassword"
-type="password"
-placeholder="Password"
-autocomplete="current-password">
-
-<button class="authButton" onclick="submitAuth()">
-<span id="authButtonText">Login</span>
-</button>
-
-<div class="switch" onclick="toggleAuth()">
-<span id="switchText">Create new account</span>
-</div>
-
-<div class="closeAuth" onclick="closeAuth()">
-Cancel
-</div>
-
-</div>
-
-</div>
-
-
-<!-- CHAT -->
 
 <div id="chat">
+  <div class="chatBox">
 
-<div class="chatBox">
+    <div class="chatTop">
+      <div class="back" onclick="closeChat()">‹</div>
+      <div class="chatLogo">💬</div>
 
-<div class="chatTop">
+      <div class="chatName">
+        <b id="chatTitle">Dityanshu Chat</b>
+        <small id="status">Not logged in</small>
+      </div>
 
-<div class="back" onclick="closeChat()">‹</div>
+      <div class="logout" onclick="logoutUser()">Logout</div>
+    </div>
 
-<div class="chatLogo">💬</div>
+    <div class="search">
+      <input id="userSearch"
+             placeholder="Search username or email..."
+             oninput="searchUsers()">
 
-<div class="chatName">
-<b id="chatTitle">Dityanshu Chat</b>
-<small id="status">Not logged in</small>
+      <div id="searchResult" class="searchResult" onclick="selectUser()">
+        <b id="resultName"></b>
+        <small id="resultEmail"></small>
+      </div>
+    </div>
+
+    <div class="chatBody" id="messages">
+      <div class="info">
+        <h3>Welcome 👋</h3>
+        <p>Login and search a username or email<br>
+        to start a real-time chat.</p>
+      </div>
+    </div>
+
+    <div class="chatBottom">
+      <input id="message" placeholder="Type a message..."
+             onkeydown="if(event.key==='Enter')sendMessage()">
+      <button class="send" onclick="sendMessage()">➤</button>
+    </div>
+
+  </div>
 </div>
 
-<div class="logout" onclick="logoutUser()">
-Logout
-</div>
-
-</div>
-
-
-<div class="search">
-
-<input
-id="userSearch"
-placeholder="Search username or email..."
-oninput="searchUsers()">
-
-<div id="searchResult" class="searchResult"
-onclick="selectUser()">
-
-<b id="resultName"></b>
-<small id="resultEmail"></small>
-
-</div>
-
-</div>
-
-
-<div class="chatBody" id="messages">
-
-<div class="info">
-
-<h3>Welcome 👋</h3>
-
-<p>
-Login and search a username or email<br>
-to start a real-time chat.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="chatBottom">
-
-<input
-id="message"
-placeholder="Type a message..."
-onkeydown="if(event.key==='Enter')sendMessage()">
-
-<button class="send" onclick="sendMessage()">
-➤
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-<div id="loading">
-Please wait...
-</div>
-
+<div id="loading">Please wait...</div>
 
 <script type="module">
-
-/* =========================================
-   FIREBASE
-========================================= */
 
 import { initializeApp }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
@@ -598,7 +249,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
-  signOut
+  signOut,
+  deleteUser
 }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
@@ -618,266 +270,154 @@ import {
 }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-
-/* YOUR FIREBASE CONFIG */
-
 const firebaseConfig = {
-
-  apiKey:
-  "AIzaSyB1a5qmnqkle3FHGPaAc6MXu_RhU-drB1I",
-
-  authDomain:
-  "dityanshu-39ab8.firebaseapp.com",
-
-  databaseURL:
-  "https://dityanshu-39ab8-default-rtdb.firebaseio.com",
-
-  projectId:
-  "dityanshu-39ab8",
-
-  storageBucket:
-  "dityanshu-39ab8.firebasestorage.app",
-
-  messagingSenderId:
-  "1081338451829",
-
-  appId:
-  "1:1081338451829:web:768c8f4e2e11b268aee53c",
-
-  measurementId:
-  "G-SNR4BYDLG3"
+  apiKey:"AIzaSyB1a5qmnqkle3FHGPaAc6MXu_RhU-drB1I",
+  authDomain:"dityanshu-39ab8.firebaseapp.com",
+  databaseURL:"https://dityanshu-39ab8-default-rtdb.firebaseio.com",
+  projectId:"dityanshu-39ab8",
+  storageBucket:"dityanshu-39ab8.firebasestorage.app",
+  messagingSenderId:"1081338451829",
+  appId:"1:1081338451829:web:768c8f4e2e11b268aee53c",
+  measurementId:"G-SNR4BYDLG3"
 };
 
+const app=initializeApp(firebaseConfig);
+const auth=getAuth(app);
+const db=getFirestore(app);
 
-const app = initializeApp(firebaseConfig);
-
-const auth = getAuth(app);
-
-const db = getFirestore(app);
-
-
-/* =========================================
-   VARIABLES
-========================================= */
-
-let currentUser = null;
-
-let currentProfile = null;
-
-let selectedUser = null;
-
-let unsubscribeMessages = null;
-
-let loginMode = true;
-
-
-/* =========================================
-   HELPERS
-========================================= */
+let currentUser=null;
+let currentProfile=null;
+let selectedUser=null;
+let unsubscribeMessages=null;
+let loginMode=true;
 
 function showLoading(show){
-
-  document.getElementById("loading").style.display =
-    show ? "flex" : "none";
-
+  document.getElementById("loading").style.display=show?"flex":"none";
 }
-
 
 function showError(message){
-
   const box=document.getElementById("authError");
-
   box.textContent=message;
-
   box.style.display="block";
-
 }
-
 
 function clearError(){
-
   const box=document.getElementById("authError");
-
   box.textContent="";
-
   box.style.display="none";
-
 }
-
 
 function escapeHTML(text){
-
   const d=document.createElement("div");
-
   d.textContent=text;
-
   return d.innerHTML;
-
 }
 
-
-/* =========================================
-   AUTH UI
-========================================= */
-
 window.openChat=function(){
-
   document.getElementById("chat").style.display="block";
-
-  if(!currentUser){
-
-    openAuth();
-
-  }
-
+  if(!currentUser) openAuth();
 };
-
 
 window.closeChat=function(){
-
   document.getElementById("chat").style.display="none";
-
 };
-
 
 window.openAuth=function(){
-
   clearError();
-
   document.getElementById("authScreen").style.display="flex";
-
 };
-
 
 window.closeAuth=function(){
-
   document.getElementById("authScreen").style.display="none";
-
 };
-
 
 window.toggleAuth=function(){
-
   loginMode=!loginMode;
-
   clearError();
 
-  document.getElementById("authTitle").textContent =
-    loginMode ? "Login" : "Create Account";
+  document.getElementById("authTitle").textContent=
+    loginMode?"Login":"Create Account";
 
-  document.getElementById("authButtonText").textContent =
-    loginMode ? "Login" : "Register";
+  document.getElementById("authButtonText").textContent=
+    loginMode?"Login":"Register";
 
-  document.getElementById("switchText").textContent =
-    loginMode
-    ? "Create new account"
-    : "Already have an account? Login";
+  document.getElementById("switchText").textContent=
+    loginMode?"Create new account":"Already have an account? Login";
 
-  document.getElementById("usernameBox").style.display =
-    loginMode ? "none" : "block";
-
+  document.getElementById("usernameBox").style.display=
+    loginMode?"none":"block";
 };
-
-
-/* =========================================
-   REGISTER / LOGIN
-========================================= */
 
 window.submitAuth=async function(){
 
   clearError();
 
-  const email=
-    document.getElementById("authEmail").value.trim();
-
-  const password=
-    document.getElementById("authPassword").value;
-
-  const username=
-    document.getElementById("username").value.trim().toLowerCase();
-
+  const email=document.getElementById("authEmail").value.trim().toLowerCase();
+  const password=document.getElementById("authPassword").value;
+  const username=document.getElementById("username").value.trim().toLowerCase();
 
   if(!email || !password){
-
     showError("Email and password are required.");
-
     return;
   }
-
 
   if(!loginMode && !username){
-
     showError("Username is required.");
-
     return;
   }
 
+  if(!loginMode && username.length<3){
+    showError("Username must have at least 3 characters.");
+    return;
+  }
+
+  if(!loginMode && !/^[a-z0-9._-]+$/.test(username)){
+    showError("Username can use letters, numbers, dot, underscore and hyphen.");
+    return;
+  }
 
   try{
 
     showLoading(true);
 
-
     if(loginMode){
 
-      await signInWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
+      await signInWithEmailAndPassword(auth,email,password);
 
     }else{
 
-      if(username.length < 3){
+      // FIX: Account first, Firestore username check after authentication.
 
-        showError("Username must have at least 3 characters.");
-
-        showLoading(false);
-
-        return;
-      }
-
+      const credential=await createUserWithEmailAndPassword(
+        auth,email,password
+      );
 
       const usernameQuery=query(
         collection(db,"users"),
         where("username","==",username)
       );
 
-
-      const usernameResult=
-        await getDocs(usernameQuery);
-
+      const usernameResult=await getDocs(usernameQuery);
 
       if(!usernameResult.empty){
 
-        showError("Username already exists.");
+        await deleteUser(credential.user);
 
+        showError("Username already exists. Please choose another.");
         showLoading(false);
-
         return;
       }
-
-
-      const credential=
-        await createUserWithEmailAndPassword(
-          auth,
-          email,
-          password
-        );
-
 
       await setDoc(
         doc(db,"users",credential.user.uid),
         {
           uid:credential.user.uid,
           username:username,
-          email:email.toLowerCase(),
+          email:email,
           createdAt:serverTimestamp()
         }
       );
-
     }
-
 
     document.getElementById("authScreen").style.display="none";
 
@@ -899,21 +439,19 @@ window.submitAuth=async function(){
     else if(error.code==="auth/invalid-credential")
       message="Invalid email or password.";
 
+    else if(error.code==="permission-denied" ||
+            error.code==="failed-precondition")
+      message="Firebase permission/index problem. Check Firestore settings.";
+
     else
       message=error.message;
 
     showError(message);
 
+  }finally{
+    showLoading(false);
   }
-
-  showLoading(false);
-
 };
-
-
-/* =========================================
-   AUTH STATE
-========================================= */
 
 onAuthStateChanged(auth,async(user)=>{
 
@@ -921,58 +459,52 @@ onAuthStateChanged(auth,async(user)=>{
 
   if(user){
 
-    const profileSnap=
-      await getDoc(doc(db,"users",user.uid));
+    try{
 
+      const profileSnap=await getDoc(doc(db,"users",user.uid));
 
-    if(profileSnap.exists()){
+      if(profileSnap.exists()){
 
-      currentProfile=profileSnap.data();
+        currentProfile=profileSnap.data();
 
-      document.getElementById("status").textContent=
-        "@"+currentProfile.username;
+        document.getElementById("status").textContent=
+          "@"+currentProfile.username;
 
-    }else{
+      }else{
 
-      document.getElementById("status").textContent=
-        user.email;
+        currentProfile=null;
+        document.getElementById("status").textContent=user.email;
+      }
 
+    }catch(error){
+
+      console.error(error);
+      document.getElementById("status").textContent=user.email;
     }
 
   }else{
 
     currentProfile=null;
-
-    document.getElementById("status").textContent=
-      "Not logged in";
-
+    document.getElementById("status").textContent="Not logged in";
   }
-
 });
-
-
-/* =========================================
-   LOGOUT
-========================================= */
 
 window.logoutUser=async function(){
 
   try{
 
     if(unsubscribeMessages){
-
       unsubscribeMessages();
-
       unsubscribeMessages=null;
-
     }
 
     await signOut(auth);
 
     selectedUser=null;
 
-    document.getElementById("chatTitle").textContent=
-      "Dityanshu Chat";
+    document.getElementById("chatTitle").textContent="Dityanshu Chat";
+    document.getElementById("userSearch").value="";
+    document.getElementById("searchResult").style.display="none";
 
     document.getElementById("messages").innerHTML=`
       <div class="info">
@@ -984,52 +516,34 @@ window.logoutUser=async function(){
   }catch(error){
 
     alert(error.message);
-
   }
-
 };
-
-
-/* =========================================
-   SEARCH USERS
-========================================= */
 
 window.searchUsers=async function(){
 
   if(!currentUser) return;
 
-  const text=
-    document.getElementById("userSearch").value
-    .trim()
-    .toLowerCase();
+  const text=document.getElementById("userSearch")
+    .value.trim().toLowerCase();
 
-
-  const result=
-    document.getElementById("searchResult");
-
+  const result=document.getElementById("searchResult");
 
   if(!text){
-
     result.style.display="none";
-
+    selectedUser=null;
     return;
   }
-
 
   try{
 
     let found=null;
-
 
     const usernameQuery=query(
       collection(db,"users"),
       where("username","==",text)
     );
 
-
-    const usernameResults=
-      await getDocs(usernameQuery);
-
+    const usernameResults=await getDocs(usernameQuery);
 
     if(!usernameResults.empty){
 
@@ -1042,19 +556,11 @@ window.searchUsers=async function(){
         where("email","==",text)
       );
 
+      const emailResults=await getDocs(emailQuery);
 
-      const emailResults=
-        await getDocs(emailQuery);
-
-
-      if(!emailResults.empty){
-
+      if(!emailResults.empty)
         found=emailResults.docs[0].data();
-
-      }
-
     }
-
 
     if(found && found.uid!==currentUser.uid){
 
@@ -1071,234 +577,144 @@ window.searchUsers=async function(){
     }else{
 
       selectedUser=null;
-
       result.style.display="none";
-
     }
 
   }catch(error){
 
     console.error(error);
-
+    result.style.display="none";
   }
-
 };
-
-
-/* =========================================
-   SELECT USER
-========================================= */
 
 window.selectUser=function(){
 
   if(!selectedUser) return;
 
   document.getElementById("userSearch").value="";
-
   document.getElementById("searchResult").style.display="none";
 
   document.getElementById("chatTitle").textContent=
     "@"+selectedUser.username;
 
   loadMessages();
-
 };
 
-
-/* =========================================
-   CHAT ID
-========================================= */
-
 function getChatId(uid1,uid2){
-
   return [uid1,uid2].sort().join("_");
-
 }
-
-
-/* =========================================
-   LOAD REAL-TIME MESSAGES
-========================================= */
 
 function loadMessages(){
 
   if(!currentUser || !selectedUser) return;
 
-
-  if(unsubscribeMessages){
-
+  if(unsubscribeMessages)
     unsubscribeMessages();
 
-  }
+  const chatId=getChatId(
+    currentUser.uid,
+    selectedUser.uid
+  );
 
+  const messagesRef=collection(
+    db,"chats",chatId,"messages"
+  );
 
-  const chatId=
-    getChatId(
-      currentUser.uid,
-      selectedUser.uid
-    );
+  const messagesQuery=query(
+    messagesRef,
+    orderBy("createdAt","asc")
+  );
 
+  unsubscribeMessages=onSnapshot(
+    messagesQuery,
+    (snapshot)=>{
 
-  const messagesRef=
-    collection(
-      db,
-      "chats",
-      chatId,
-      "messages"
-    );
+      const box=document.getElementById("messages");
+      box.innerHTML="";
 
+      if(snapshot.empty){
 
-  const messagesQuery=
-    query(
-      messagesRef,
-      orderBy("createdAt","asc")
-    );
-
-
-  unsubscribeMessages=
-    onSnapshot(
-      messagesQuery,
-      (snapshot)=>{
-
-        const box=
-          document.getElementById("messages");
-
-        box.innerHTML="";
-
-
-        if(snapshot.empty){
-
-          box.innerHTML=`
-            <div class="info">
-              <h3>Start chatting 💬</h3>
-              <p>Send your first message.</p>
-            </div>
-          `;
-
-          return;
-
-        }
-
-
-        snapshot.forEach((docSnap)=>{
-
-          const data=docSnap.data();
-
-          const div=
-            document.createElement("div");
-
-
-          div.className=
-            "message "+
-            (
-              data.senderId===currentUser.uid
-              ? "me"
-              : "other"
-            );
-
-
-          let time="";
-
-          if(data.createdAt){
-
-            time=
-              data.createdAt
-              .toDate()
-              .toLocaleTimeString(
-                [],
-                {
-                  hour:"2-digit",
-                  minute:"2-digit"
-                }
-              );
-
-          }
-
-
-          div.innerHTML=
-            escapeHTML(data.text)+
-            '<span class="time">'+
-            time+
-            '</span>';
-
-
-          box.appendChild(div);
-
-        });
-
-
-        box.scrollTop=box.scrollHeight;
-
-      },
-      (error)=>{
-
-        console.error(error);
-
-        document.getElementById("messages").innerHTML=`
+        box.innerHTML=`
           <div class="info">
-            <h3>Chat error</h3>
-            <p>Check your Firestore rules.</p>
+            <h3>Start chatting 💬</h3>
+            <p>Send your first message.</p>
           </div>
         `;
 
+        return;
       }
-    );
 
+      snapshot.forEach((docSnap)=>{
+
+        const data=docSnap.data();
+        const div=document.createElement("div");
+
+        div.className=
+          "message "+
+          (data.senderId===currentUser.uid?"me":"other");
+
+        let time="";
+
+        if(data.createdAt){
+
+          time=data.createdAt.toDate().toLocaleTimeString(
+            [],
+            {hour:"2-digit",minute:"2-digit"}
+          );
+        }
+
+        div.innerHTML=
+          escapeHTML(data.text)+
+          '<span class="time">'+time+"</span>";
+
+        box.appendChild(div);
+      });
+
+      box.scrollTop=box.scrollHeight;
+    },
+    (error)=>{
+
+      console.error(error);
+
+      document.getElementById("messages").innerHTML=`
+        <div class="info">
+          <h3>Chat error</h3>
+          <p>Check your Firestore rules.</p>
+        </div>
+      `;
+    }
+  );
 }
-
-
-/* =========================================
-   SEND REAL-TIME MESSAGE
-========================================= */
 
 window.sendMessage=async function(){
 
   if(!currentUser){
-
     openAuth();
-
     return;
-
   }
-
 
   if(!selectedUser){
-
     alert("First search and select a user.");
-
     return;
-
   }
 
-
-  const input=
-    document.getElementById("message");
-
-
+  const input=document.getElementById("message");
   const text=input.value.trim();
 
-
   if(!text) return;
-
 
   try{
 
     input.disabled=true;
 
-
-    const chatId=
-      getChatId(
-        currentUser.uid,
-        selectedUser.uid
-      );
-
+    const chatId=getChatId(
+      currentUser.uid,
+      selectedUser.uid
+    );
 
     await addDoc(
       collection(
-        db,
-        "chats",
-        chatId,
-        "messages"
+        db,"chats",chatId,"messages"
       ),
       {
         text:text,
@@ -1308,26 +724,21 @@ window.sendMessage=async function(){
       }
     );
 
-
     input.value="";
 
   }catch(error){
 
     console.error(error);
 
-    alert(
-      "Message send nahi hua. Firestore rules check karo."
-    );
+    alert("Message send nahi hua. Firestore rules check karo.");
 
+  }finally{
+
+    input.disabled=false;
+    input.focus();
   }
-
-
-  input.disabled=false;
-
 };
 
-
 </script>
-
 </body>
 </html>
