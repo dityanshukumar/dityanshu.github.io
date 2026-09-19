@@ -1,1 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dityanshu Kumar</title>
 
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#0b141a;
+  color:#fff;
+  min-height:100vh;
+}
+
+.app{
+  max-width:1100px;
+  margin:auto;
+  min-height:100vh;
+  background:#111b21;
+}
+
+header{
+  height:70px;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:#202c33;
+  border-bottom:1px solid #344047;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:bold;
+}
+
+.logo span{
+  color:#25d366;
+}
+
+.menu{
+  font-size:25px;
+  cursor:pointer;
+}
+
+.hero{
+  padding:50px 25px;
+  text-align:center;
+  background:linear-gradient(135deg,#111b21,#17262d);
+}
+
+.avatar{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:38px;
+  font-weight:bold;
+  background:#25d366;
+  color:#07140c;
+}
+
+.hero h1{
+  margin-top:18px;
+  font-size:30px;
+}
+
+.hero p{
+  margin-top:8px;
+  color:#aebac1;
+}
+
+.buttons{
+  margin-top:25px;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+button{
+  border:0;
+  padding:13px 22px;
+  border-radius:25px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.chatBtn{
+  background:#25d366;
+  color:#07140c;
+}
+
+.aboutBtn{
+  background:#2a3942;
+  color:#fff;
+}
+
+section{
+  padding:30px 20px;
+}
+
+section h2{
+  margin-bottom:18px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.card{
+  background:#202c33;
+  padding:22px;
+  border-radius:15px;
+}
+
+.card h3{
+  margin-bottom:8px;
+  color:#25d366;
+}
+
+.card p{
+  color:#b5c0c5;
+  line-height:1.5;
+}
+
+/* CHAT */
+
+#chatScreen{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#0b141a;
+  z-index:99;
+}
+
+.chatApp{
+  height:100%;
+  max-width:700px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  background:#111b21;
+}
+
+.chatHeader{
+  height:65px;
+  background:#202c33;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px 15px;
+}
+
+.back{
+  font-size:28px;
+  cursor:pointer;
+}
+
+.chatAvatar{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#25d366;
+  color:#07140c;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
+
+.chatTitle{
+  flex:1;
+}
+
+.chatTitle strong{
+  display:block;
+}
+
+.chatTitle small{
+  color:#8696a0;
+}
+
+.messages{
+  flex:1;
+  overflow-y:auto;
+  padding:20px;
+  background:
+  radial-gradient(circle at center,#18252c 0,#0b141a 70%);
+}
+
+.welcome{
+  text-align:center;
+  color:#8696a0;
+  margin-top:35%;
+  line-height:1.7;
+}
+
+.message{
+  max-width:75%;
+  padding:9px 12px;
+  margin:8px 0;
+  border-radius:9px;
+  word-wrap:break-word;
+}
+
+.sent{
+  margin-left:auto;
+  background:#005c4b;
+}
+
+.received{
+  margin-right:auto;
+  background:#202c33;
+}
+
+.message small{
+  display:block;
+  margin-top:4px;
+  color:#9eb0b8;
+  font-size:10px;
+  text-align:right;
+}
+
+.chatInput{
+  display:flex;
+  gap:8px;
+  padding:10px;
+  background:#202c33;
+}
+
+.chatInput input{
+  flex:1;
+  background:#2a3942;
+  color:white;
+  border:0;
+  outline:none;
+  padding:13px 16px;
+  border-radius:25px;
+}
+
+.send{
+  width:48px;
+  height:48px;
+  padding:0;
+  border-radius:50%;
+  background:#25d366;
+  font-size:18px;
+}
+
+footer{
+  text-align:center;
+  padding:25px;
+  color:#8696a0;
+}
+
+@media(max-width:700px){
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding:40px 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+  <div class="logo">Dityanshu<span>.</span></div>
+  <div class="menu">⋮</div>
+</header>
+
+<div class="hero">
+
+  <div class="avatar">DK</div>
+
+  <h1>Dityanshu Kumar</h1>
+
+  <p>Welcome to my personal website</p>
+
+  <div class="buttons">
+    <button class="chatBtn" onclick="openChat()">
+      💬 Open Chat
+    </button>
+
+    <button class="aboutBtn" onclick="document.getElementById('about').scrollIntoView()">
+      About Me
+    </button>
+  </div>
+
+</div>
+
+<section id="about">
+
+<h2>About Me</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🎓 Education</h3>
+<p>Bachelor of Commerce</p>
+</div>
+
+<div class="card">
+<h3>💡 Skills</h3>
+<p>Communication, Learning, Technology & Creativity</p>
+</div>
+
+<div class="card">
+<h3>🚀 Projects</h3>
+<p>Personal projects and future applications.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Dityanshu Kumar
+</footer>
+
+</div>
+
+
+<!-- CHAT SCREEN -->
+
+<div id="chatScreen">
+
+<div class="chatApp">
+
+<div class="chatHeader">
+
+<div class="back" onclick="closeChat()">‹</div>
+
+<div class="chatAvatar">💬</div>
+
+<div class="chatTitle">
+<strong>Dityanshu Chat</strong>
+<small id="chatStatus">Real-time Chat</small>
+</div>
+
+</div>
+
+<div class="messages" id="messages">
+
+<div class="welcome">
+<h3>Welcome to Chat 💬</h3>
+<p>Real-time messaging will be enabled<br>
+after Firebase connection.</p>
+</div>
+
+</div>
+
+<div class="chatInput">
+
+<input
+id="messageInput"
+type="text"
+placeholder="Type a message..."
+onkeydown="if(event.key==='Enter') sendMessage()"
+>
+
+<button class="send" onclick="sendMessage()">➤</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script type="module">
+
+/*
+==================================================
+FIREBASE CONFIG
+==================================================
+
+Firebase setup complete hone ke baad yahan
+apna Firebase configuration paste karna hai.
+*/
+
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT.appspot.com",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+
+
+/*
+==================================================
+CHAT INTERFACE
+==================================================
+*/
+
+window.openChat = function(){
+
+  document.getElementById("chatScreen").style.display="block";
+
+};
+
+window.closeChat = function(){
+
+  document.getElementById("chatScreen").style.display="none";
+
+};
+
+
+/*
+Temporary local message function.
+Firebase connect karne ke baad isi system ko
+real-time database se connect karenge.
+*/
+
+window.sendMessage = function(){
+
+  const input=document.getElementById("messageInput");
+  const text=input.value.trim();
+
+  if(!text) return;
+
+  const messages=document.getElementById("messages");
+
+  const welcome=document.querySelector(".welcome");
+
+  if(welcome){
+    welcome.remove();
+  }
+
+  const message=document.createElement("div");
+
+  message.className="message sent";
+
+  const time=new Date().toLocaleTimeString([],{
+    hour:"2-digit",
+    minute:"2-digit"
+  });
+
+  message.innerHTML=
+    escapeHTML(text)+
+    "<small>"+time+"</small>";
+
+  messages.appendChild(message);
+
+  input.value="";
+
+  messages.scrollTop=messages.scrollHeight;
+
+};
+
+
+function escapeHTML(text){
+
+  const div=document.createElement("div");
+
+  div.textContent=text;
+
+  return div.innerHTML;
+
+}
+
+</script>
+
+</body>
+</html>
